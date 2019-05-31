@@ -1,0 +1,47 @@
+<!--pages/activity/turntable.wxml-->
+<view class='container turntable_bg' style='padding:0'>
+  <view class='zp_top_bg zp_top'>
+    <view class='clearfix'>
+      <view class='pull-left Cur_mendian dzp_md'>当前门店：
+        <text> {{Cur_mendian}}</text>
+      </view>
+      <view class='pull-right '>
+        <navigator class='my_prize' url='../../pages/prize/index'>我的奖品</navigator>
+      </view>
+    </view>
+    <view class='hd_time'>活动时间：
+      <text> {{Begin_time}}</text> ~
+      <text>  {{End_time}}</text>
+    </view>
+  </view>
+  <view class="container-out turntable_area_bg">
+    <view style='color:#fff;font-size:12px;margin-top:5px;margin-left:10px'>剩余积分：{{my_Score}}</view>
+    <view class="circle" wx:for="{{circleList}}" style="top:{{item.topCircle}}rpx;left:{{item.leftCircle}}rpx;background-color: {{(index%2==0)?colorCircleFirst:colorCircleSecond}};"></view>
+    <view class="container-in">
+      <view class="content-out  {{(index==indexSelect)?colorAwardSelect:colorAwardDefault}} " wx:for="{{awardList}}" wx:key="" style="top:{{item.topAward}}rpx;left:{{item.leftAward}}rpx;" data-name="{{item.NameAward}}">
+        <!-- background-color: {{(index==indexSelect)?colorAwardSelect:colorAwardDefault}}; -->
+        <image class="award-image" src="{{item.NameAward=='谢谢参与'?noPrizeImg:item.imageAward}}"></image>
+      </view>
+      <view class="start-btn {{isRunning?'turntable_btn_bg_s':'turntable_btn_bg'}}  " bindtap="startGame" style=" "></view>
+      <!-- background-color:{{isRunning?'#e7930a':'#ffe400'}} -->
+    </view>
+  </view>
+  <view class='Cur_mendian '>活动规则:
+    <rich-text nodes="{{Rule_desc}}" type="text"></rich-text>
+  </view>
+<!-- 弹出模态 S-->
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class='yuying-sign_toast-box' bindtap="close">
+    <image  src="../../image/success_turntable.png" />
+    <view style='margin-top:295rpx;text-align:center;padding-left:130rpx;padding-right:130rpx;color:#685fa1'>
+      <view class='{{prizeName=="谢谢参与"?"yuying-opacity":""}}' >恭喜您获得</view>
+      <view style='margin-top:30rpx;font-size:32rpx;font-weight:bold'>{{prizeName}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 弹出模态 E-->
+
+</view>

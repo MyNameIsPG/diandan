@@ -1,0 +1,8 @@
+/* pages/prize/index.wxss */
+.recordsList{
+  overflow: hidden;
+  padding-left:20rpx;
+padding-right:20rpx;
+
+}
+.prizeList{position: fixed;top: 0;left: 0;z-index: 99;width: 100%}

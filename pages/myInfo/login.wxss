@@ -1,0 +1,27 @@
+/* pages/myInfo/login.wxss */
+
+.login_input {
+  position: relative;
+}
+
+.login_input input {
+  padding-left: 30px;
+}
+
+.login_input image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.yuying-login .yuying-login-input button.yzm_btn {
+  background-color: transparent;
+  border-radius: 0px;
+  top: 4rpx;
+  color: #333;
+  width: 100px;
+}
+.yuying-login-input button.yzm_btn::after{
+  border: none;
+}

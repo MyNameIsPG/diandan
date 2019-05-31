@@ -1,0 +1,7 @@
+/* pages/index/news_detail.wxss */
+.news_list{
+  width: 100%;
+}
+.a_content {
+  white-space:normal;
+}

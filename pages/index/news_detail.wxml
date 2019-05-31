@@ -1,0 +1,9 @@
+<!--pages/index/news_detail.wxml-->
+<view class="container" style='min-height:500rpx'>
+<view class='news_list' wx:for='{{news_list}}' wx:for-item='item'>
+    <view class='a_title'>{{item.title}}</view>
+    <view class='sub_datetime'>{{item.addtime}}</view>
+    <view class='a_content'><rich-text nodes="{{item.contentGG}}" bindtap="tap" type="text"></rich-text></view>
+  </view>
+</view>
+

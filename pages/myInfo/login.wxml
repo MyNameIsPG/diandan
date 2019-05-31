@@ -1,0 +1,62 @@
+<!--pages/myInfo/login.wxml-->
+<view class='container ' style='padding:0px'>
+
+  <!-- <view class='login_bg' >
+   <image class='' style='width:100%;height:100%' src='../../image/login_bg.png'></image>
+  </view> -->
+  <view class='main yuying-login'>
+    <!-- 登陆logo -->
+    <view class='yuying-login-header'>
+      <!-- logo -->
+      <image class='yuying-login-logo' src='../../image/logo.png'></image>
+      <view class='yuying-login-logo-name'>欢迎使用煜鹰</view>
+      <view class='yuying-login-logo-En'>Welcome to Brilliant Eagle</view>
+    </view>
+    <!-- 登陆logo -->
+    <!-- S 类型选择 -->
+    <view class='clearfix yuying-tabs yuying-border-bottom'>
+      <view class='pull-left tabs-item {{item.curColor}}' wx:for='{{type_list}}' wx:for-item='item' wx:key="{{index}}" bindtap='ClickSort' data-index='{{item.index}}' data-name='{{item.name}}' data-bclor='{{item.curColor}}'>{{item.name}}
+        <icon class='yuying-tabs-border'></icon>
+      </view>
+    </view>
+    <!-- E 类型选择 -->
+    <!-- 登陆 -->
+    <view hidden='{{!login_state}}'>
+      <view class="inputView  yuying-login-input">
+        <!-- <image src='../../image/user_icon.png'></image> -->
+        <input class="input" type="text" confirm-type="done" placeholder="请输入手机号" placeholder-style="color: #000;opacity:0.3" bindinput="username" />
+      </view>
+      <view class="inputView yuying-login-input" style='margin-bottom:30rpx;position:relative'>
+        <!-- <image src='../../image/password_icon.png'></image> -->
+        <input class="input"  password="{{psdType}}" confirm-type="done" type='text' cursor-spacing='20rpx' placeholder="请输入密码" placeholder-style="color: #000;opacity:0.3" bindinput="pwd" />
+         <view class='eyes_box' bindtap='onClickEyes'>
+          <image class='eyes' src='{{eyesImg}}'></image>
+        </view>
+      </view>
+      <navigator url='../../pages/Info_manage/forget_password' class='to_index' style='text-align:right;width:550rpx;' >忘记密码 ？</navigator>
+      <button class='yuying-login-btn' open-type="getUserInfo" type="button" bindgetuserinfo="onGotUserInfo">登 录</button>
+      <view url='../../pages/index/index' class='to_index' bindtap='backIndex'>暂不登录，返回首页</view>
+    </view>
+    <!-- 登陆 -->
+    <!-- 注册 -->
+    <view hidden='{{!register_state}}'>
+      <view class="inputView  yuying-login-input">
+        <input class="input" type="number" placeholder="请输入手机号码" maxlength='11'  placeholder-style="color: #000;opacity:0.3" bindinput="tel" />
+      </view>
+      <view class="inputView  yuying-login-input" style='position:relative'>
+        <input class="input" type="text" maxlength='6' placeholder="请输入短信验证码" placeholder-style="color: #000;opacity:0.3" bindinput="code" />
+        <button class='yzm_btn'  bindtap="sendcode" disabled='{{disabled}}'>{{codetext}}</button>
+      </view>
+   
+      <view class="inputView  yuying-login-input" style='position:relative'>
+        <input class="input"  placeholder="请设置密码" password="{{psdType}}" confirm-type="done" type='text' placeholder-style="color: #000;opacity:0.3" bindinput="reg_pwd" />
+        <view class='eyes_box' bindtap='onClickEyes'>
+          <image class='eyes' src='{{eyesImg}}'></image>
+        </view>
+      </view>
+      <button class='yuying-login-btn' type="button" open-type="getUserInfo" bindtap="listenerLogin">免费注册</button>
+      <view url='../../pages/index/index' class='to_index' bindtap='backIndex'>暂不注册，返回首页</view>
+    </view>
+    <!-- 注册 -->
+  </view>
+</view>

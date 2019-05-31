@@ -1,0 +1,4 @@
+/* pages/myInfo/Asset_records.wxss */
+.recordsList{
+  overflow: hidden;
+}

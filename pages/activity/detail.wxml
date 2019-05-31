@@ -1,0 +1,41 @@
+<!--pages/activity/detail.wxml-->
+<view class="container page_bg wk_page activity">
+
+  <!-- 活动介绍 S -->
+  <view class='hd_top'>
+    <image src='../../image/yxhd_1.png'></image>
+    <view class='hd_js'> 活动介绍</view>
+    <view>平台会员达到指定的条件，便获得幸运大转盘抽奖机会，赢 取大奖！</view>
+    <view>活动最终解释权归门店所有！</view>
+  </view>
+  <!-- 活动介绍 E -->
+  <!-- 网咖列表展示https://www.yumaocn.com -->
+  <view class='main'>
+    <view>
+      <input class='yuying-search-hd' type='text' placeholder='请输入网咖名称' placeholder-style='color:#000;opacity:0.5;' bindconfirm='search' confirm-type='search'></input>
+    </view>
+
+    <view class='list_tit0'>为您找到以下开启本活动的门店，选择门店开启您的 幸运之旅</view>
+    <view class='wk_list' wx:for='{{wk_list}}' wx:for-item='item' wx:key="{{Id}}" data-Mid='{{item.mendian_id}}' data-Sid='{{item.shanghu_id}}' data-name='{{item.mendian_name}}'  data-name='{{item.mendian_name}}'  data-begin_time='{{item.begin_time}}'  data-end_time='{{item.end_time}}' data-rule_desc='{{item.rule_desc}}' bindtap='onClickToDetail'>
+      <!-- <image class='wk_img' src='{{item.wk_image}}'></image> -->
+
+      <image class='wk_img' src="{{item.mendian_image == '' || item.mendian_image.length==0?'../../image/wk_img.png':item.mendian_image}}"></image>
+      <view class=' wk_nm'>
+        <view class=' wk_name list_name'>{{item.mendian_name}}</view>
+        <view class='address_name '>{{item.addr}}</view>
+        <view class='pull-right' style='color:#999;font-size:14px;margin-top:2px;display:none'>
+          <image class='cur_ads' src="{{item.mendian_id == null?'../../image/green.png':'../../image/cur_ads_icon.png'}}"></image>
+          {{item.KM}}
+        </view>
+        <view class='star_BG star_con'>
+          <image src="{{item.mendian_star}}"></image>
+        </view>
+      </view>
+
+
+
+    </view>
+    <view class='foot-data' wx:if="{{no_data}}">
+    </view>
+  </view>
+</view>

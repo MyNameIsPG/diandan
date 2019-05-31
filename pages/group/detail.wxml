@@ -1,0 +1,25 @@
+<!--pages/group/detail.wxml-->
+<view class='container yuying-createTeam' style='padding:0;height:100vh'>
+    <image src='../../image/group_page_bg.png'></image>
+    <view class='yuying-createTeam-content'>
+        <view class='clearfix '> 
+          <view class='pull-left  yuying-team-property'>团队类型：</view>
+          <view class='pull-left yuying-team-type'>{{title}}</view>
+        </view>
+         <view class='clearfix'> 
+          <view class='pull-left  yuying-team-property'>组团奖励：</view>
+          <view class='pull-left yuying-team-reward'>{{rlue}}</view>
+        </view>
+         <view class='clearfix '> 
+          <view class='pull-left  yuying-team-property'>组团时限：</view>
+          <view class='pull-left yuying-team-time'>{{time}}</view>
+        </view>
+        <view>
+         <input type='text' bindinput='InputTeamName' placeholder='给你的团队取个霸气的团名吧' 
+         placeholder-style='color:rgba(255,255,255,0.3)' />
+          <input type='text' bindinput='InputTeamSlogan' placeholder='要不要来个鼓舞士气的口号' 
+          placeholder-style='color:rgba(255,255,255,0.3)' />
+        </view>
+    </view>
+    <button class='yuying-createTeam-btn' bindtap='clickTocreate' disabled="{{isexpired}}">{{isexpired?'该活动已结束':'确认创团'}}</button>
+</view>

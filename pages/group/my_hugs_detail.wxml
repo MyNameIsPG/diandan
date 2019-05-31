@@ -1,0 +1,70 @@
+<!--pages/group/my_hugs_detail.wxml-->
+<view class='container'>
+  <view class='yuying-hugsDetail-content'>
+    <view class='clearfix yuying-hugsDetail-item'>
+      <view class='pull-left'>活动网咖</view>
+      <view class='pull-right'>{{user_detail.mendian_name}}</view>
+    </view>
+    <view class='clearfix yuying-hugsDetail-item'>
+      <view class='pull-left'>团队类型</view>
+      <view class='pull-right'>{{user_detail.activityname}}</view>
+    </view>
+    <view class='clearfix yuying-hugsDetail-item'>
+      <view class='pull-left'>活动开始时间</view>
+      <view class='pull-right'>{{user_detail.starttime}}</view>
+    </view>
+    <view class='clearfix yuying-hugsDetail-item'>
+      <view class='pull-left'>活动结束时间</view>
+      <view class='pull-right'>{{user_detail.endtime}}</view>
+    </view>
+    <view class='clearfix yuying-hugsDetail-item'>
+      <view class='pull-left'>发起人</view>
+      <view class='pull-right'>{{user_detail.creatname == null?'':user_detail.creatname}}</view>
+    </view>
+    <view class='clearfix yuying-hugsDetail-item'>
+      <view class='pull-left'>团队名称</view>
+      <view class='pull-right'>{{user_detail.teamname}}</view>
+    </view>
+    <view class='clearfix yuying-hugsDetail-item'>
+      <view class='pull-left'>团队口号</view>
+      <view class='pull-right'>{{user_detail.teamslogan}}</view>
+    </view>
+    <view class='clearfix yuying-hugsDetail-item'>
+      <view class='pull-left'>你的身份</view>
+      <view class='pull-right'>{{user_detail.open_person == 1?'团长':'团员'}}</view>
+    </view>
+    <view class='clearfix yuying-hugsDetail-item'>
+      <view class='pull-left'>参团时间</view>
+      <view class='pull-right'>{{user_detail.addtime}}</view>
+    </view>
+    <view style='border-bottom:1rpx solid #eee;padding-bottom:10rpx;'>
+      <view class='yuying-hugsDetail-item-member'>团队成员</view>
+      <view class='yuying-hugsDetail-member'>
+        <image wx:for='{{imglist}}' wx:for-index='index' wx:key="" wx:for-item='item' src='{{item.imgurl}}'></image>
+      </view>
+    </view>
+  </view>
+  <view class='clearfix' style='margin-top:30rpx;margin-bottom:30rpx;'>
+    <!-- 分享给好友 -->
+    <view class='pull-left' style='width:48%;'>
+      <view  wx:if='{{postdata.teamstate =="进行中" &&  postdata.state==1}}'>
+       <button open-type='share' class='yuying-hugs-quit-btn' >邀请好友</button>
+      </view>
+      <view wx:else></view>
+    </view>
+     
+    <!-- 分享给好友 -->
+
+    <view class='pull-right'style='width:48%;'>
+      <view wx:if='{{postdata.teamstate =="进行中" &&  postdata.state==1 && postdata.open_person == 1}}'>
+        <view class='yuying-hugs-quit-btn' bindtap="update_team">解散该团</view>
+      </view>
+      <!-- postdata.teamstate =="进行中"  -->
+      <view wx:if='{{postdata.teamstate =="进行中" && postdata.state==1 && postdata.open_person != 1}}'>
+        <view class='yuying-hugs-quit-btn' bindtap="update_team">退出该团</view>
+      </view>
+      <view wx:else></view>
+
+    </view>
+  </view>
+</view>

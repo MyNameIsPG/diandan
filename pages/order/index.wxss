@@ -1,0 +1,85 @@
+.order-list {
+
+}
+.order-list-item {
+
+}
+.order-list-item-header {
+  overflow: hidden;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 20rpx 0;
+}
+.order-list-item-header .text {
+  float: right;
+  color: #888;
+  margin-top: 16rpx;
+  margin-right: 30rpx;
+}
+.order-list-item-header .title {
+  vertical-align: middle
+}
+.order-list-item-header .title text {
+  color: #000;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+.icon-logo {
+  width: 66rpx;
+  height: 66rpx;
+  vertical-align: middle;
+  margin-right: 40rpx;
+  margin-left: 60rpx;
+}
+.icon-right {
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+.order-list-item-body {
+  padding: 20rpx 0 30rpx;
+}
+.items-flex {
+  display: flex;
+  color: #888;
+  font-size: 32rpx;
+  margin-bottom: 8rpx;
+}
+.items-flex view:first-child {
+  margin-left: 170rpx;
+  flex: 1;
+}
+.items-flex view:last-child {
+  width: 100rpx;
+  margin-right: 30rpx;
+  text-align: right;
+}
+.items-tip {
+  padding-right: 30rpx;
+  text-align: right;
+  font-size: 30rpx;
+  color: #888;
+  margin-top: 10rpx;
+}
+.items-tip text {
+  color: #000;
+  font-weight: bold;
+}
+.order-list-item-footer {
+  border-bottom: 1px solid #e4e4e4;
+  text-align: right;
+  padding-right: 30rpx;
+  padding-bottom: 20rpx;
+}
+.order-list-item-footer text {
+  line-height: 84rpx;
+  height: 84rpx;
+  text-align: center;
+  background: #d84443;
+  color: #fff;
+  font-size: 32rpx;
+  display: inline-block;
+  border-radius: 42rpx;
+  padding: 0 60rpx;
+}
+

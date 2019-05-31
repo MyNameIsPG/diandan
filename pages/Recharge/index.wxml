@@ -1,0 +1,24 @@
+<!--pages/Recharge/index.wxml-->
+<view class="container ">
+  <view class="bg" style='display:{{display}}'></view>
+  <view class="show" style='display:{{display}}'>
+    <view class='clearfix header'>
+      <view class='pull-left' style='font-size:34rpx;margin-left:18rpx;font-weight:bold;margin-top:30rpx;margin-bottom:30rpx;'>充值中心</view>
+    </view>
+    <view class='content' style='margin-top:10px;margin-bottom:10px;'>
+      <view class='clearfix selectOne'>
+        <view style="position: relative;font-size: {{ item.money=='其他'?30:36 }}rpx;" class="pull-left tc_list {{item.B_color}}" wx:for="{{Listmoney}}" wx:key='' bindtap="onClickMoney" wx:for-item="item" data-id='{{item.id}}' data-money='{{item.value}}'>{{item.money}}
+       <text class='yuying-money-unit' hidden="{{item.money=='其他'?true:false}}" >元</text>
+        </view>
+      </view>
+      <!-- 输入金额 -->
+      <view class='' hidden='{{pay_btn_state}}' style='position: relative;'>
+        <input class=' changeMoney' type='digit' placeholder='请输入充值金额' bindinput='input_q' />
+        <view class=' changeMoney_unit' >元</view>
+      </view>
+    </view>
+    <view  class='yuying-page-footer'>
+     <button class='yuying-pay-btn' style='height:40px;line-height:40px'  open-type="getUserInfo" disabled='{{pay_disabled}}' bindgetuserinfo='btnOnclick'>{{pay_text}}</button>
+    </view>
+  </view>
+  </view>

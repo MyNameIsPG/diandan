@@ -1,0 +1,38 @@
+<!--pages/myInfo/Asset_records.wxml-->
+<view class='container' style='padding-top:20rpx;'>
+  <view class=' search'style='height:auto;top:20rpx;' hidden='true'>
+    <view class=' search_left'>
+      <view class="section">
+        <!-- <view class="section__title">日期选择器</view> -->
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2027-09-01" fields='month' bindchange="bindDateChange">
+          <view class="picker" style='color:#2b2b2b;height:35px;line-height:35px;padding-left:20rpx;'>
+         <text style='font-weight:bold;font-size:16px;'> {{addtime_year}}</text>
+           <text style='font-size:14px;dispaly:inline-block;margin-left:5px;margin-right:5px'>年</text>
+           <image style='width:11px;height:5px;dispaly:inline-block;margin-left:5px;margin-right:5px;' src='../../image/bottom.png'></image>
+            <text style='font-weight:bold;font-size:16px;'>{{addtime_month}}</text>
+            <text style='font-size:14px;dispaly:inline-block;margin-left:5px;margin-right:5px'>月</text>
+           <image style='width:11px;height:5px;dispaly:inline-block;margin-left:5px;margin-right:5px;'  src='../../image/bottom.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view class='Asset_records'>
+    <view class='recordsList' wx:for='{{recordsList}}' wx:for-item='item' wx:key=''>
+      <view class='pull-left' style='font-size:14px;color:#999;text-align:left'>
+        <view class='yuying-asset-records-type'>{{item.optype}}</view>
+        <view> {{item.addtime}}</view>
+      </view>
+      <view class='pull-right {{item.money1 < 0 ? "t_green": "t_red"}}' style='font-size:14px;text-align:right;padding-right:2%'>{{item.money1}}元</view>
+    </view>
+    <view class='no-detail' hidden='{{recordsList.length==0?false:true}}'>
+      <image src='../../image/no-detail.png'></image>
+      <view  class='no-detail-text'>暂无记录</view>
+     </view>
+    <view class='foot-data'  wx:if="{{no_data}}"></view>
+
+  </view>
+
+
+</view>

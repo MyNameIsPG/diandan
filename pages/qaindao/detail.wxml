@@ -1,0 +1,67 @@
+<!--pages/qaindao/detail.wxml-->
+<view class='container' style='padding:0'>
+  <view class='yuying-sign-header-box'>
+    <image class='yuying-sign-header-bg' src='../../image/yuying-sign-header-bg.png'></image>
+    <view class='clearfix yuying-sign-header'>
+      <view class='pull-left yuying-sign-mendian-name'>{{Cur_mendian}}</view>
+      <view class='pull-right yuying-sign-mendian-score'>当前门店积分：{{my_Score}}</view>
+    </view>
+    <!-- 签到按钮 S -->
+    <view>
+      <view class='yuying-sign-btn'>
+        <image src='../../image/yuying-sign-btn.png'></image>
+        <view class='yuying-sign-btn-text' bindtap='qiandao_btn' data-text='{{sign_btn}}'>{{sign_btn}}</view>
+      </view>
+      <view hidden='{{sign_btn=="签到"?true:false}}' class='yuying-text-center'>今日已签到，请明日再来~</view>
+    </view>
+    <!-- 签到按钮 E -->
+  </view>
+  <view class='gs_sign'>
+    <view class='gs_sign_box' style='width:90%'>
+      <view class='yuying-sign-date'>{{yearMonth}}</view>
+      <!-- <view class='gs_sign_day'>
+      <image bindtap='onshow' src='../../image/qiandao_r.png'></image>
+      <view>总共签到：
+        <text>{{qd_num}}</text>天</view>
+
+      <view>持续签到
+        <text>{{qd_cont_m_num}}</text>天</view>
+
+    </view> -->
+      <view class='gs_sign_content'>
+        <view class='gs_week'>
+          <block wx:for="{{week}}" wx:key="index">
+            <view class='gs_wook'>
+              <view style='width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;'>{{item.wook}}</view>
+            </view>
+          </block>
+        </view>
+        <view class='gs_week'>
+          <block wx:for="{{day}}" wx:key="index">
+            <view class='gs_wook' style='width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;'>
+              <view class="{{ item.item ==  getDate ? 'dateOn' : ''}}">{{item.item}}</view>
+              <view class='gs_clocksucceed' wx:if="{{item.src}}">
+                <image src='{{item.src}}'></image>
+              </view>
+            </view>
+          </block>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 弹出模态 S-->
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class='yuying-sign_toast-box' bindtap="close">
+    <image  src="../../image/sign_toast.png" />
+    <view style='margin-top:295rpx;text-align:center;padding-left:130rpx;padding-right:130rpx;color:#685fa1'>
+      <view >恭喜您，签到成功~</view>
+      <view style='margin-top:30rpx;font-size:32rpx;font-weight:bold'>{{productname}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 弹出模态 E-->

@@ -1,0 +1,28 @@
+<!--pages/prize/index.wxml-->
+<view class='container' style='padding:0rpx;padding-top:70rpx'>
+  <!-- 列表 -->
+  <view class='Asset_records'>
+    <view class='clearfix list_top prizeList'>
+      <view class='pull-left' >中奖时间</view>
+      <view class='pull-left'>中奖类型</view>
+      <view class='pull-left'>奖品名称</view>
+       <view class='pull-left'>中奖门店</view>
+    </view>
+
+    <view class='recordsList prizeList_bottom' wx:for='{{recordsList}}' wx:for-item='item' wx:key=''>
+      <view class='pull-left ellipsis' >{{item.addtime}}</view>
+      <view class='pull-left ellipsis' >{{item.activity_type}}</view>
+      <view class='pull-left ellipsis' >{{item.prize_name}}</view>
+      <view class='pull-left ellipsis' >{{item.mendian_name}}</view>
+    </view>
+    <view class='no-detail' hidden='{{no_detail}}'>
+      <image src='../../image/no-detail.png'></image>
+      <view class='no-detail-text'>暂无记录</view>
+     </view>
+    <view class='foot-data' wx:if="{{no_data}}">
+    </view>
+
+  </view>
+
+
+</view>

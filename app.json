@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/list",
+    "pages/order/index",
+    "pages/wangka/detail",
+    "pages/logs/logs",
+    "pages/myInfo/index",
+    "pages/wangka/index",
+    "pages/myInfo/login",
+    "pages/myInfo/register",
+    "pages/myInfo/Asset_records",
+    "pages/index/news_detail",
+    "pages/Info_manage/index",
+    "pages/Info_manage/modify_pwd",
+    "pages/Info_manage/modify_Tel",
+    "pages/activity/turntable",
+    "pages/activity/index",
+    "pages/activity/detail",
+    "pages/qaindao/index",
+    "pages/qaindao/detail",
+    "pages/prize/index",
+    "pages/prize/huodongguize",
+    "pages/Recharge/index",
+    "pages/group/index",
+    "pages/group/detail",
+    "pages/group/createTeam",
+    "pages/group/groupTeam",
+    "pages/group/my_hugs",
+    "pages/group/my_hugs_detail",
+    "pages/Info_manage/forget_password",
+    "pages/about_us/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "煜鹰服务",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#d74a45",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/index_icon.png",
+        "selectedIconPath": "image/index_icon_h1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "iconPath": "image/order_icon.png",
+        "selectedIconPath": "image/order_icon_h1.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/wangka/detail",
+        "iconPath": "image/wangka_icon.png",
+        "selectedIconPath": "image/wangka_icon_h.png",
+        "text": "最近网咖"
+      },
+      {
+        "pagePath": "pages/myInfo/index",
+        "iconPath": "image/wode_icon.png",
+        "selectedIconPath": "image/wode_icon_h.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

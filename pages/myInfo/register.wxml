@@ -1,0 +1,32 @@
+<!--pages/myInfo/register.wxml-->
+<view class='container' style='padding:0px'>
+  <view class='login_bg' >
+   <image class='' style='width:100%;height:100%' src='../../image/login_bg.png'></image>
+  </view>
+  <view class='main login register '>
+    <view class="inputView" style="margin-top: 110rpx">
+      <input class="input" type="text" placeholder="请设置账号" confirm-type="done"  placeholder-style="color: #fff;opacity:0.3" bindinput="zhanghao" />
+    </view>
+    <view class="inputView" style='position:relative'>
+      <input class="input"  password="{{psdType}}" placeholder="请设置密码" confirm-type="done"  type='text' placeholder-style="color: #fff;opacity:0.3" bindinput="pwd" />
+      <view class='eyes_box' bindtap='onClickEyes'>
+       <image class='eyes' src='{{eyesImg}}'></image>
+      </view>
+     
+    </view>
+    <view class="inputView" >
+      <input class="input" type="text" placeholder="请输入姓名" confirm-type="done"   placeholder-style="color: #fff;opacity:0.3" bindinput="username" />
+    </view>
+     <view class="inputView" >
+      <input class="input" type="text" placeholder="请输入身份证号码" confirm-type="done" placeholder-style="color: #fff;opacity:0.3" bindinput="sfcode" />
+    </view>
+     <view class="inputView" >
+      <input class="input" type="number" placeholder="请输入手机号码"  placeholder-style="color: #fff;opacity:0.3" bindinput="tel" />
+    </view>
+     <view class="inputView" style='position:relative' >
+      <input class="input" type="text" placeholder="请输入短信验证码" placeholder-style="color: #fff;opacity:0.3" bindinput="code" />
+      <button class='yzm_btn' type="button" bindtap="sendcode">发送验证码</button>
+    </view>
+    <button style='margin-top:72rpx' class='login_btn' type="button" bindtap="listenerLogin">注册</button>
+  </view>
+</view>

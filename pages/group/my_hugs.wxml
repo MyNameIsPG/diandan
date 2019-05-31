@@ -1,0 +1,32 @@
+<!--pages/group/my_hugs.wxml-->
+<view class="container">
+  <view class='yuying-hugs-list {{item.testlist.extendrule}}' bindtap='clikcToDetail'  wx:for='{{teamlist}}' wx:for-index='index'  wx:for-item='item' wx:key="{{index}}" data-id='{{item.testlist.id}}' data-team_id='{{item.testlist.team_id}}' data-mdid='{{item.testlist.mdid}}' data-shid='{{item.testlist.shid}}' data-activity_id='{{item.testlist.activity_id}}' data-state = "{{item.testlist.state}}" data-open_person = "{{item.testlist.open_person}}" data-teamstate="{{item.testlist.teamstate}}">
+    <icon class="yuying-hugs_list-icon "></icon>
+    <!-- 门店名称 -->
+    <!-- <view class='clearfix yuying-hugs-top' wx:for='{{mendian_name}}' wx:for-index='index'  wx:for-item='item'> -->
+    <view class='clearfix yuying-hugs-top' >
+      <view class='pull-left yuying-hugs-mendian'>{{item.testlist.mendian_name}}</view>
+      <view class='pull-right yuying-hugs-job'>{{item.testlist.open_person == 1?'团长':'团员'}}</view>
+      <view class='pull-right yuying-hugs-type'>{{item.testlist.activityname}}</view>
+    </view>
+    <!-- 团员头像 -->
+    <view class='yuying-hugs-member'>
+      <image src='{{images.imgurl}}'  wx:key="{{index}}" wx:for='{{item.testlist.listUser}}' wx:for-item='images'></image>
+    </view>
+    <!-- 创建时间 -->
+    <view class='clearfix' >
+      <view class='pull-left yuying-hugs-dateTime'>
+        创团时间：{{item.testlist.addtime}}
+      </view>
+      <view class='pull-right yuying-hugs-state'>
+        {{item.testlist.teamstate}}
+      </view>
+  </view>
+  </view>
+  <!-- <view class='no-detail' hidden='{{no_detail}}'>
+      <image src='../../image/no-detail.png'></image>
+      <view class='no-detail-text'>暂无记录</view>
+     </view> -->
+  <view class='foot-data' wx:if="{{no_data}}"></view>
+  <!-- <view class='no-detail-text' wx:if="{{no_data}}">暂无记录</view> -->
+</view>

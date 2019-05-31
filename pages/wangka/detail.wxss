@@ -1,0 +1,4 @@
+/* pages/wangka/detail.wxss */
+
+.swiper{width:100%;border-radius: 5rpx;overflow: hidden}
+.swiper image{border-radius: 5rpx}

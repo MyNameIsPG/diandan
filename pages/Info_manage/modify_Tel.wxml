@@ -1,0 +1,46 @@
+<!--pages/Info_manage/modify_Tel.wxml-->
+
+<!-- 这里是下一步 -->
+<view class='container' style='padding-left:5%;padding-right:5%' hidden='{{oldyincan}}'>
+  <view class='main yuying-modify-Tel '>
+    <!-- <view class="inputView">
+      <input class="input" type="number" maxlength='11' placeholder="请输入旧手机号" confirm-type="done" value='{{oldvalue}}' placeholder-style="color: #999;opacity:0.5" disabled='true' bindinput="oldtel"  />
+    </view>
+    <view class="inputView" style='position:relative'>
+      <input class="input" maxlength='4' style='width:55%' type="text" placeholder="短信验证码" placeholder-style="color: #999;opacity:0.5" bindinput="oldcode" /> -->
+
+    <view class="inputView  yuying-login-input">
+      <input class="input" type="number" placeholder="请输入手机号码" confirm-type="done" value='{{oldvalue}}' isabled='true' bindinput="oldtel" placeholder-style="color: #000;opacity:0.3" />
+    </view>
+    <view class="inputView  yuying-login-input" style='position:relative'>
+      <input class="input" type="text" maxlength='6' placeholder="请输入短信验证码" placeholder-style="color: #000;opacity:0.3" bindinput="oldcode" />
+      <button class='yzm_btn' bindtap="odlsendcode" disabled='{{olddisabled}}'>{{oldcodetext}}</button>
+    </view>
+    <button class='yuying-login-btn' type="button" bindtap="xiayibu" disabled='{{oldcode.length!=4}}'>下一步</button>
+    <!--       
+      <button class='yzm_btn' type="button" bindtap="odlsendcode" disabled='{{olddisabled}}'>{{oldcodetext}}</button> -->
+    <!-- </view> -->
+  </view>
+</view>
+
+<!-- 这里是下一步之后验证新手机 -->
+<view class='container' style='padding-left:5%;padding-right:5%' hidden='{{yincan}}'>
+  <view class='main   yuying-modify-Tel '>
+    <!-- <view class="inputView">
+      <input class="input" type="number" maxlength='11' placeholder="请输入新手机号码" confirm-type="done" placeholder-style="color: #999;opacity:0.5" bindinput="tel" />
+    </view>
+    <view class="inputView" style='position:relative'>
+      <input class="input" maxlength='4' style='width:55%' type="text" placeholder="短信验证码" placeholder-style="color: #999;opacity:0.5" bindinput="code" />
+      <button class='yzm_btn' type="button" bindtap="sendcode" disabled='{{disabled}}'>{{codetext}}</button>
+    </view>
+    <button style='margin-top:72rpx;margin-left:0;margin-right:0' class='login_btn' type="button" bindtap="listenerLogin">确定</button> -->
+    <view class="inputView  yuying-login-input">
+      <input class="input" type="number" placeholder="请输入手机号码" confirm-type="done" value='{{oldvalue}}' isabled='true' bindinput="tel" placeholder-style="color: #000;opacity:0.3" />
+    </view>
+    <view class="inputView  yuying-login-input" style='position:relative'>
+      <input class="input" type="text" maxlength='6' placeholder="请输入短信验证码" placeholder-style="color: #000;opacity:0.3" bindinput="code" />
+      <button class='yzm_btn' bindtap="sendcode" disabled='{{disabled}}'>{{codetext}}</button>
+    </view>
+    <button class='yuying-login-btn' type="button" bindtap="listenerLogin">确定</button>
+  </view>
+</view>

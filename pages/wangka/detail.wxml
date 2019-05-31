@@ -1,0 +1,145 @@
+<!--pages/wangka/detail.wxml-->
+<view class="container">
+  <view class='clearfix '>
+    <navigator url='/pages/wangka/index?typePage=1'>
+      <view class='clearfix yuying-wangka-detail-address'>
+        <view class='pull-left'>
+          <!-- <image src='../../image/cur_ads_icon.png'></image> -->
+          <text>{{mendian_name}}</text>
+          <image class='yuying-mendian-change-icon' src='../../image/change_icon.png'></image>
+        </view>
+        <view class='pull-right yuying-wangka-detail-km'>
+          <image class='yuying-mendian-range-icon' src='../../image/range_img.png'></image>
+          {{range}}
+        </view>
+      </view>
+    </navigator>
+
+  </view>
+  <!--S 网咖活动 -->
+  <view>
+    <swiper class="swiper" autoplay="false" interval="3000" duration="1000" circular='true'>
+      <block wx:for="{{movies}}" wx:for-index="index" wx:for-item="item" wx:key=''>
+        <swiper-item>
+          <image src="{{item.imgurl}}" data-url='{{item.url}}' data-Sid='{{shanghu_id}}' data-Mid='{{mendian_id}}' class="slide-image" mode="aspectFill" bindtap='clickToList' data-index='{{item.index}}'  />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--E 网咖活动 -->
+  <view>
+    <view class='yuying-wangka-detail-top'>
+      <view class='clearfix' hidden='{{islogin}}' >
+        <view class='pull-left'>
+          <image class='yuying-no-login-img' src='../../image/no_login.png'></image>
+        </view>
+        <view class='pull-left'>
+          <navigator url='/pages/myInfo/login'>注册 | 登录</navigator>
+        </view>
+          <view class='pull-right'>登录后，即可参与网咖活动</view>
+      </view>
+      <view class='clearfix' hidden='{{!islogin}}' >
+          <view class='pull-left'>  <image class='yuying-no-login-img' src='{{userImg}}'></image> </view>
+          <view class='pull-left'> <text class='yuying-bold ellipsis' style='width:120rpx;display:block' >{{username}}</text> </view>
+          <view class='pull-right'>当前门店积分：<text class='yuying-bold'>{{my_Score}}</text></view>
+          <view class='pull-right balance'>余额：<text class='yuying-bold'>{{balance}}</text></view>
+      </view>
+    </view>
+  </view>
+  <!-- S 开始点单 网费充值 -->
+  <view class='orderSheetBtn'>
+    <view class='orderSheetBtnOne' bindtap='showok'>
+      <image class='orderSheetBtnImg' src='../../image/orderSheetBtn1.png'></image>
+      <view class='orderSheetBtnText'>
+        <text>开始点单</text>
+        <text>Start order</text>
+      </view>
+    </view>
+    
+    <view class='orderSheetBtnTwo' bindtap='bolcok'>
+      <image class='orderSheetBtnImg' src='../../image/orderSheetBtn2.png'></image>
+      <view class='orderSheetBtnText'>
+        <text>网费充值</text>
+        <text>Net fee recharge</text>
+      </view>
+    </view>
+  </view>
+  <!-- E 开始点单 网费充值 -->
+
+
+  <!-- S 网咖简介 -->
+  <view class='yuying-wangka-about_us'>
+    <!-- 标题 -->
+    <view class='yuying-wangka-detail-title'>
+      <image class='yuying-wangka-title-icon' src='../../image/yuying-wangka-jj.png'></image>网咖简介
+    </view>
+    <!-- 内容 -->
+    <view class='yuying-wangka-article'>
+       <view class='{{ellipsis}}'>
+      <rich-text style='font-size:30rpx;line-height:1.5' nodes="{{mendian_remake.length == 0 || mendian_remake == null?'该门店很懒，什么都没留下':mendian_remake}}" bindtap="tap" type="text"></rich-text>
+      <button class='yuying-showAll-btn' hidden='{{ellipsis==""?true:false}}' bindtap='clickShow'>全文</button>
+        </view>
+      <!-- <view class='clearfix yuying-wangka-article-tags' style='display:none;'>
+          <view class='pull-left tags-item' wx:for='{{tags}}' wx:for-item='item'  wx:key='' >{{item.name}}</view>
+      </view> -->
+    </view>
+  </view>
+  <!-- E 网咖简介 -->
+ <!--S 网费标准 -->
+ <view class='yuying-wangka-cost' style='display:none;'>
+    <view class='yuying-wangka-detail-title'>
+      <image class='yuying-wangka-title-icon' src='../../image/yuying-wangka-hd.png'></image>网费标准
+    </view>
+    <view class='yuying-wangka-cost-box'>
+      <view class='clearfix yuying-wangka-cost-item' wx:for='{{CostList}}' wx:for-item='item' wx:key='' >
+       <view class='pull-left'>{{item.name}}</view>
+        <view class='pull-left'>{{item.price}}元/小时</view>
+      </view>
+    
+    </view>
+ </view>
+<!-- E 网费标准 -->
+
+
+  <!--S 网咖环境 -->
+  <view>
+    <view class='yuying-wangka-detail-title' style='margin-top:30rpx'>
+      <image class='yuying-wangka-title-icon' src='../../image/yuying-wangka-hj.png'></image>网咖环境
+    </view>
+    <view style='padding-left:20rpx;color:#999;color:#999;font-size:30rpx;padding-right:20rpx;' hidden='{{environment_imgHide}}'>该门店很懒，暂无上传图片</view>
+    <view class='clearfix yuying-wangka-hj'>
+      <view class='pull-left yuying-wangka-hj-item' wx:for='{{environment_img}}' wx:for-index='index' wx:for-item='item' wx:key=''>
+        <image src='{{item.hj_url}}'  data-index="{{index}}"  data-btntype='1'  bindtap="previewImage"></image>
+      </view>
+    </view>
+  </view>
+  <!--E 网咖环境 -->
+    <!--S 网咖活动 -->
+  <view>
+    <view class='yuying-wangka-detail-title' style='margin-top:30rpx'>
+      <image class='yuying-wangka-title-icon' src='../../image/yuying-wangka-hd.png'></image>网咖活动
+    </view>
+    <view style='padding-left:20rpx;color:#999;color:#999;font-size:30rpx;padding-right:20rpx;' hidden='{{activity_imgHide}}'>该门店很懒，暂无上传图片</view>
+    <view class='clearfix yuying-wangka-hj'>
+      <view class='pull-left yuying-wangka-hj-item' wx:for='{{activity_img}}' wx:for-index='index' wx:for-item='item' wx:key=''>
+        <image src='{{item.hj_url}}'  data-index="{{index}}"  data-btntype='2'  bindtap="previewImage"></image>
+      </view>
+    </view>
+  </view>
+  <!--E 网咖活动 -->
+
+  <!-- 地址 -->
+  <view class='wk_address'>
+    <view class='yuying-wangka-detail-title'>
+      <image class='yuying-wangka-title-icon' src='../../image/yuying-wangka-dz.png'></image>网咖地址
+    </view>
+    <view class='address_name' style='padding:0 20rpx'>{{addr}}</view>
+    <!-- 地图 -->
+    <view>
+
+      <map scale="14" longitude="{{mendian_longitude}}" latitude="{{mendian_latitude}}" markers="{{markers}}" style='width:calc(100% - 40rpx);border-radius:10px;overflow:hidden;margin:0 auto;' bindtap='openMap'></map>
+    </view>
+    <button class='yuying-login-btn ' bindtap='map' style='margin-top:40rpx;margin-bottom:20rpx;  width:100%;height:90rpx;line-height:90rpx;'>
+      <image class='Go_here' src='../../image/go.png'></image>去到这里</button>
+  </view>
+</view>

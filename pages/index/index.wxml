@@ -1,0 +1,81 @@
+<!--index.wxml-->
+<view class="container ">
+  <!-- 轮播图 S -->
+  <swiper class="swiper" indicator-dots="true" autoplay="false" interval="3000" duration="1000" circular='true' previous-margin="50px;" next-margin="50px;">
+    <block wx:for="{{movies}}" wx:for-index="index" wx:key=''>
+      <swiper-item  >
+        <image src="{{item.ImgUrl}}" data-url='{{item.LinkUrl}}' bindtap='ClickTopage' class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 轮播图 E -->
+
+  <!-- S商城入口 -->
+  <!-- <view class='yuying-shop-entry' bindtap='ShopEntry' >
+    <image src='../../image/yuying-shop-bg.png'></image>
+    <image class='yuying-hot' src='{{hot_curimg}}'></image>
+  </view> -->
+  <!--E 商城入口 -->
+  <!-- S 开始点单 网费充值 -->
+  <view class='orderSheetBtn'>
+    <view class='orderSheetBtnOne' bindtap='showok'>
+      <image class='orderSheetBtnImg' src='../../image/orderSheetBtn1.png'></image>
+      <view class='orderSheetBtnText'>
+        <text>开始点单</text>
+        <text>Start order</text>
+      </view>
+    </view>
+    
+    <view class='orderSheetBtnTwo' bindtap='bolcok'>
+      <image class='orderSheetBtnImg' src='../../image/orderSheetBtn2.png'></image>
+      <view class='orderSheetBtnText'>
+        <text>网费充值</text>
+        <text>Net fee recharge</text>
+      </view>
+    </view>
+  </view>
+  <!-- E 开始点单 网费充值 -->
+  <view class='main'>
+    <!-- S 列表类型选择 -->
+    <view class='clearfix yuying-tabs yuying-border-bottom' style='margin-left:8rpx'>
+      <view class='pull-left tabs-item {{item.curColor}}' wx:for='{{type_list}}' wx:for-item='item' wx:key="{{index}}" bindtap='ClickSort' data-index='{{item.index}}' data-name='{{item.name}}' data-bclor='{{item.curColor}}'>{{item.name}}
+        <icon class='yuying-tabs-border'></icon>
+      </view>
+    </view>
+    <!-- E 列表类型选择 -->
+    <view class='NewsList yuying-border-bottom' wx:for="{{NewsList}}" wx:for-item="item" wx:key="">
+      <navigator url='../../pages/index/news_detail?id={{item.id}}'>
+        <!-- 文章标题 -->
+        <view class='list_title'>{{item.title}}</view>
+        <!-- 文章内容 -->
+        <!-- <view class='list_content ellipsis-2'>
+          <rich-text nodes="{{item.contentGG}}" bindtap="tap" type="text"></rich-text>
+        </view> -->
+        <!-- 新闻略缩图 -->
+        <!-- <view class='clearfix yuying-news-item'>
+          <view class='pull-left yuying-news-item-img'>
+            <image src=''></image>
+          </view>
+          <view class='pull-left yuying-news-item-img'>
+            <image src=''></image>
+          </view>
+          <view class='pull-left yuying-news-item-img'>
+            <image src=''></image>
+          </view>
+        </view> -->
+        <!-- 时间和浏览度 -->
+        <view class='clearfix yuying-news-createTime'>
+          <view class='pull-left createTime'>{{item.addtime}}</view>
+          <view class='pull-right reads'>
+            <image src='../../image/reads.png'></image>200</view>
+        </view>
+      </navigator>
+    </view>
+    <view class='foot-data' wx:if="{{no_dataa}}">
+    </view>
+  </view>
+  <!-- 充值按钮 -->
+  <!-- <view class='pay_btn' bindtap='bolcok'>
+    <image src='../../image/pay_btn.png'></image>
+  </view> -->
+</view>

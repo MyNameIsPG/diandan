@@ -1,0 +1,84 @@
+<!--pages/wangka/index.wxml-->
+<view class="container  wk_page" style='padding-top:248rpx;'>
+  <!-- 滚动以后显示 -->
+  <view style='position:fixed;top:-1rpx;width:calc( 100% - 40rpx);z-index:1000;background:#fff;left:0;padding:20rpx;' hidden='{{!pageheader}}'>
+    <!-- 选择排序 S-->
+    <view class='clearfix yuying-tabs'>
+      <view class='pull-left tabs-item {{item.curColor}}' wx:for='{{type_list}}' wx:for-item='item' wx:key="{{index}}" bindtap='ClickSort' data-index='{{item.index}}' data-name='{{item.name}}' data-bclor='{{item.curColor}}'>{{item.name}}
+        <icon class='yuying-tabs-border'></icon>
+      </view>
+
+    </view>
+    <!-- 选择排序 E-->
+
+    <!--S 门店搜索 -->
+    <view class='yuying-search-btn' bindtap='ClickSearch' style='width:100rpx;height:62rpx;bottom:20rpx;right:30rpx;'>
+      <image style='width:39rpx;height:39rpx;float:right;margin-top:10rpx;' src='../../image/search.png'></image>
+    </view>
+    <view hidden='{{searchBox}}' class='yuying-search-input yuying-search-input-bg {{Animation}}' style='top:60rpx;z-index:10001'>
+      <input class='' type='text' placeholder='请输入网咖名称' placeholder-style='color:#fff;opacity:0.5;' bindconfirm='search' confirm-type='search'></input>
+    </view>
+    <!--E 门店搜索 -->
+
+  </view>
+  <!-- 滚动以后显示 -->
+  <view class='yuying-mendian-top' hidden='{{pageheader}}'>
+    <image src='../../image/yuying-mendian-top.png'></image>
+  </view>
+  <view class='search' bindtap='hideSort' hidden='{{pageheader}}'>
+    <view class='yuying-search-bg'>
+      <!--S 当前位置 -->
+      <view class='search_address'>
+        <view class='yuying-curmendian-ads-tit'>
+          <image class='pull-left address_map' src='../../image/cur_ads_icon.png'></image>当前位置
+        </view>
+        <view bindtap='openMap' class='ellipsis yuying-curmendian-ads'>{{addressText}}</view>
+      </view>
+      <!--E 当前位置 -->
+      <!-- 选择排序 S-->
+      <view class='clearfix yuying-tabs'>
+        <view class='pull-left tabs-item {{item.curColor}}' wx:for='{{type_list}}' wx:for-item='item' wx:key="{{index}}" bindtap='ClickSort' data-index='{{item.index}}' data-name='{{item.name}}' data-bclor='{{item.curColor}}'>{{item.name}}
+          <icon class='yuying-tabs-border'></icon>
+        </view>
+
+      </view>
+      <!-- 选择排序 E-->
+
+      <!--S 门店搜索 -->
+      <view class='yuying-search-btn' bindtap='ClickSearch'>
+        <image src='../../image/search.png'></image>
+      </view>
+      <view hidden='{{searchBox}}' class='yuying-search-input yuying-search-input-bg {{Animation}}'>
+        <view style='position: relative'> 
+          <input class='' type='text' placeholder='请输入网咖名称' placeholder-style='color:#fff;opacity:0.5;' value='{{inputValue}}' bindconfirm='search' confirm-type='search'></input>
+          <icon type="clear" bindtap='clearInputEvent' style='position: absolute;top:12rpx;right:0rpx;z=index:999'></icon>
+        </view>
+
+      </view>
+      <!--E 门店搜索 -->
+    </view>
+  </view>
+  <!-- 网咖列表展示https://www.yumaocn.com -->
+  <view class='main'>
+    <view class='wk_list' wx:for='{{wk_list}}' wx:for-item='item' wx:key="{{Id}}" data-Mid='{{item.mendian_id}}' bindtap='onClickToDetail' data-range=' {{item.KM}}' data-Sid='{{item.shanghu_id}}'>
+      <!-- <image class='wk_img' src='{{item.wk_image}}'></image> -->
+      <view class='star_BG star_con'>
+        <image src="{{item.mendian_star}}"></image>
+      </view>
+      <image class='wk_img' src="{{item.mendian_image == '' || item.mendian_image.length==0?'../../image/wk_img.png':item.mendian_image}}"></image>
+      <icon class='yuying-mendian_list-icon {{item.bg_num}}'></icon>
+      <view class='clearfix wk_nm'>
+        <view class='pull-left wk_name list_name'>{{item.mendian_name}}</view>
+        <view class='pull-right' style='color:#999;font-size:14px;margin-top:2px;'>
+          <image class='cur_ads' src="{{item.mendian_id == null?'../../image/green.png':'../../image/cur_ads_icon.png'}}"></image>
+          {{item.KM}}
+        </view>
+      </view>
+
+      <view class='yuying-mendian-address_name '>{{item.addr}}</view>
+
+    </view>
+    <view class='foot-data' wx:if="{{no_data}}"></view>
+    <view style='margin-top:100rpx;font-size:24rpx;color:#ccc;text-align:center;' hidden='{{query_res}}'>非常抱歉，没找到您想找的门店！</view>
+  </view>
+</view>

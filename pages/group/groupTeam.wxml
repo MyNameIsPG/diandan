@@ -1,0 +1,64 @@
+<!--pages/group/groupTeam.wxml-->
+<view class='container yuying-createTeam' style='padding:0;height:1612rpx'>
+  <image src='https://app.yumaocn.com/app/image/group_page_bg1.png' style='height:1612rpx;'></image>
+  <view class='yuying-createTeam-content'>
+  <view class='yuying-createTeam-mendian-name'>{{mendian_name}}</view>
+    <view class='yuying-createTeam-activityTtime'>《 活动时间：{{starttime}} - {{endtime}} 》</view>
+    <!-- 规则 -->
+    <view class='yuying-groupTeam-rule'>
+      <image class='yuying-groupTeam-title' src='https://www.yumaocn.com/app/image/yuying-groupTeam-title.png'></image>
+      <view style='padding:10rpx;text-indent:2em;font-size:32rpx;font-weight:bold'>
+        {{rule_description}}
+      </view>
+    </view>
+    <!-- 参团人数 -->
+    <view class='yuying-groupTeam-teammate'>
+      <view>该团已有<text>{{CountNum}}</text>人参与，剩余<text>{{surplus}}</text>人</view>
+      <view class='clearfix' style='margin-top:40rpx;'>
+        <view class='pull-left yuying-teammate-item' wx:for='{{team_members}}' wx:for-item='item' wx:key='' >
+         <image src='{{item.wx_img}}'></image>
+        </view>
+      </view>
+    </view>
+    <!-- 组团倒计时 -->
+    <!-- <view class='yuying-groupTeam-countDown'>
+      <view>活动倒计时：</view>
+      <view class='clearfix yuying-groupTeam-datetime'>
+        <view class='pull-left'>28</view>
+         <view class='pull-left no-border'>天</view>
+        <view class='pull-left'>11</view>
+        <view class='pull-left no-border'>:</view>
+        <view class='pull-left'>11</view>
+        <view class='pull-left no-border'>:</view>
+        <view class='pull-left'>11</view>
+      </view>
+    </view> -->
+    <!-- 分享给好友 -->
+    <view class='clearfix' style='margin-top:120rpx;'>
+      <view class='pull-left yuying-groupTeam-bnt'>
+        <image src='../../image/yuying-groupTeam-bnt-bg.png'></image>
+        <view bindtap='clickToInviting_friends'>{{create_team}}</view>
+      </view>
+     
+      <view class='pull-right yuying-groupTeam-bnt'>
+        <image src='../../image/yuying-groupTeam-bnt-bg.png'></image>
+        <view bindtap='clickToCreateTeam'>我要创团</view>
+      </view>
+    </view>
+    <view class='clearfix' style='margin-top:80rpx;'>
+     <view class='pull-left yuying-groupTeam-bnt'>
+        <image src='../../image/yuying-groupTeam-bnt-bg.png'></image>
+       <view><button open-type='share' style='background:none;color:#fff;height:83rpx;line-height:83rpx;font-size:32rpx;font-weight:bolid' >邀请好友</button></view>
+      </view>
+      <view class='pull-right yuying-groupTeam-bnt'>
+        <image src='../../image/yuying-groupTeam-bnt-bg.png'></image>
+       <view bindtap='backIndex'>更多活动</view>
+      </view>
+      
+    </view>
+
+     <!-- <view bindtap='backIndex' style='margin-top:50rpx;width:100%;text-align:center;height:80rpx;line-height:80rpx;' >进入煜鹰平台，关注更多！</view> -->
+  </view>
+ 
+  <!-- <view class='yuying-createTeam-btn' bindtap='clickToInviting_friends'>我要参团</view> -->
+</view>

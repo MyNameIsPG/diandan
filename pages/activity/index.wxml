@@ -1,0 +1,8 @@
+<!--pages/activity/index.wxml-->
+ <view class='container'>
+  <view class='activity'>
+    <view class='activityList'  wx:for='{{activityList}}' wx:for-item='item'  wx:key=''  data-url='{{item.DetailUrl}}' bindtap='onclickUrl' >
+      <image src="{{item.activityImg}}"></image>
+    </view>
+  </view>
+ </view>

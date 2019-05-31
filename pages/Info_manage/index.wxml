@@ -1,0 +1,31 @@
+<!--pages/Info_manage/index.wxml-->
+<view class='container'>
+  <!-- <image class='login_bg' src='../../image/login_bg.png'></image> -->
+  <view class='main  yuying-Info-manage'>
+      <view class="clearfix c_list">
+        <view class="pull-left c_tit">账号</view>
+        <!-- <image class="pull-right" src='../../image/right.png'></image> -->
+        <view class="pull-right">{{zhanghao}}</view>
+      </view>
+       <view class="clearfix c_list">
+        <view class="pull-left c_tit">QQ</view>
+        <!-- <image class="pull-right" src='../../image/right.png'></image> -->
+        <view class="pull-right">{{qq}}</view>
+      </view>
+     <navigator url="../../pages/Info_manage/modify_Tel">
+      <view class="clearfix c_list">
+        <view class="pull-left c_tit">手机号</view>
+        <image class="pull-right tolink" src='../../image/right.png'></image>
+        <view class="pull-right">{{tel}}</view>
+      </view>
+    </navigator>
+     <navigator url="../../pages/Info_manage/modify_pwd">
+      <view class="clearfix c_list">
+        <view class="pull-left c_tit">修改密码</view>
+        <image class="pull-right tolink" src='../../image/right.png'></image>
+        <view class="pull-right">******</view>
+      </view>
+    </navigator>
+    
+  </view>
+</view>

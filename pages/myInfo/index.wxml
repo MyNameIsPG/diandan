@@ -1,0 +1,74 @@
+<!--pages/myInfo/index.wxml-->
+<view class="container" style='padding:0px;min-height:200px;background:#f0f0f0'>
+  <view class='personal_center'>
+    <!-- <image  src='../../image/personal_center_bg.png'></image> -->
+    <navigator url="../../pages/Info_manage/index">
+      <view class='clearfix user_info'>
+        <!-- 用户图像 -->
+        <view class='pull-left img_box'>
+          <image src='{{header_img}}'></image>
+        </view>
+        <!-- 用户昵称 -->
+        <view class='pull-left usersName'>{{usersName}}
+          <view class='yuying-vip-box'>
+            <!-- <image src='../../image/vip.png'></image> -->
+          </view>
+        </view>
+        <view class='pull-right yuying-link-right-icon'>
+          <image  src='../../image/right.png'></image>
+        </view>
+      </view>
+    </navigator>
+  
+  </view>
+    <!-- 用户余额 -->
+    <view class='clearfix yuying-user-money'>
+      <view class='pull-left yuying-user-ye'>
+        煜猫币
+        <view class='num'>{{Virtual_money}}</view>
+      </view>
+      <view class='pull-left line'> </view>
+       <view class='pull-right yuying-user-ye'  bindtap='bolcok' >
+        余额
+       <view class='yuying-Recharge-btn' >充值</view>
+        <view class='num'>{{balance}}<text class='yuying-user-money-unit' >元</text></view>
+      </view>
+      
+    </view>
+  <view class="main user_main">
+    <navigator url="../../pages/myInfo/Asset_records">
+      <view class="clearfix c_list">
+        <image class="pull-left" src='../../image/money_icon.png'></image>
+        <view class="c_tit">余额记录</view>
+        <image class="pull-right link_r" src='../../image/right.png'></image>
+      </view>
+    </navigator>
+    <navigator url="../../pages/prize/index">
+      <view class="clearfix c_list">
+        <image class="pull-left" src='../../image/prize_icon.png'></image>
+        <view class="c_tit">我参与的活动</view>
+        <image class="pull-right link_r" src='../../image/right.png'></image>
+      </view>
+    </navigator>
+     <navigator url="../../pages/group/my_hugs">
+      <view class="clearfix c_list last-c_list">
+        <image class="pull-left" src='../../image/hugs_icon.png'></image>
+        <view class="c_tit">我的抱团</view>
+        <image class="pull-right link_r" src='../../image/right.png'></image>
+      </view>
+    </navigator>
+    <view class='yuying-line-15'></view>
+     <navigator url="../../pages/about_us/index">
+      <view class="clearfix c_list">
+        <image class="pull-left" src='../../image/about_us_icon.png'></image>
+        <view class="c_tit">关于我们</view>
+        <image class="pull-right link_r" src='../../image/right.png'></image>
+      </view>
+    </navigator>
+    <view class="clearfix c_list last-c_list" bindtap='tuichu'>
+      <image class="pull-left" src='../../image/close.png'></image>
+      <view class="c_tit">切换账号</view>
+      <image class="pull-right link_r" src='../../image/right.png'></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+/* pages/wangka/index.wxss */
+.example {
+ 
+  display: block; 
+  height: 70rpx;
+}
+ 
+.marquee_box {
+ 
+  width: 100%;
+ 
+  position: relative;
+ 
+}
+ 
+ 
+ 
+.marquee_text {
+ 
+  white-space: nowrap;
+ 
+  position: absolute;
+ 
+  top: 0;
+ 
+}

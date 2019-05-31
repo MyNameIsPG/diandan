@@ -1,0 +1,17 @@
+<!--pages/Info_manage/modify_pwd.wxml-->
+<view class='container' style='padding-left:5%;padding-right:5%'>
+  <view class='main yuying-modify-Tel '>
+    <view class="inputView yuying-login-input">
+      <input class="input"  password="true" placeholder="请输入新密码" confirm-type="done" type='text' placeholder-style="color: #999;opacity:0.5" bindinput="psdType" />
+    </view>
+    <view class="inputView yuying-login-input">
+      <input class="input"  password="true" placeholder="再次输入密码" confirm-type="done"  type='text' placeholder-style="color: #999;opacity:0.5" bindinput="pwdType" />
+    </view>
+     <view class="inputView yuying-login-input" style='position:relative' >
+      <input class="input" type="text" style='width:55%' maxlength='4' placeholder="短信验证码" placeholder-style="color: #999;opacity:0.5" bindinput="code" />
+      <button class='yzm_btn' type="button"  bindtap="sendcode" disabled='{{disabled}}'>{{codetext}}</button>
+    </view>
+    <button  class='yuying-login-btn' type="button" bindtap="listenerLogin">确定</button>
+  </view>
+</view>
+

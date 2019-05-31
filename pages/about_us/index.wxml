@@ -1,0 +1,9 @@
+<!--pages/about_us/index.wxml-->
+<view class='container'>
+  <view class='about_us'>
+    <view>打造泛娱乐（网咖）以玩家为中心，打造网咖里的社群生活，实现虚拟现实结合，线上线下购买商品的一卡通，让顾客的钱瞬间增值。</view>
+    <view >当前版本：v1.0</view>
+    <view class='text-right'>长沙慧度网络科技发展有限公司</view>
+  </view>
+
+</view>

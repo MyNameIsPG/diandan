@@ -1,0 +1,66 @@
+<!--pages/order/index.wxml-->
+
+<view class='order-list'>
+  <view class='order-list-item'>
+    <view class='order-list-item-header'>
+      <text class='text'>订单已完成</text>
+      <view class='title'>
+        <image class='icon-logo' src='../../image/logo.png'></image>
+        <text>煜鹰服务</text>
+        <image class='icon-right' src='../../image/right.png'></image>
+      </view>
+    </view>
+    <view class='order-list-item-body'>
+      <view class='items-flex'>
+        <view>豆芽差就差</view>
+        <view>x1</view>
+      </view>
+      <view class='items-flex'>
+        <view>豆芽差就差</view>
+        <view>x1</view>
+      </view>
+      <view class='items-flex'>
+        <view>豆芽差就差</view>
+        <view>x1</view>
+      </view>
+      <view class='items-tip'>
+        共3件商品,实付<text>￥22.5</text>
+      </view>
+    </view>
+    <view class='order-list-item-footer'>
+      <text>去评论</text>
+      <text>查看评论</text>
+    </view>
+  </view>
+  <view class='order-list-item'>
+    <view class='order-list-item-header'>
+      <text class='text'>订单已完成</text>
+      <view class='title'>
+        <image class='icon-logo' src='../../image/logo.png'></image>
+        <text>煜鹰服务</text>
+        <image class='icon-right' src='../../image/right.png'></image>
+      </view>
+    </view>
+    <view class='order-list-item-body'>
+      <view class='items-flex'>
+        <view>豆芽差就差</view>
+        <view>x1</view>
+      </view>
+      <view class='items-flex'>
+        <view>豆芽差就差</view>
+        <view>x1</view>
+      </view>
+      <view class='items-flex'>
+        <view>豆芽差就差</view>
+        <view>x1</view>
+      </view>
+      <view class='items-tip'>
+        共3件商品,实付<text>￥22.5</text>
+      </view>
+    </view>
+    <view class='order-list-item-footer'>
+      <text>去评论</text>
+      <text>查看评论</text>
+    </view>
+  </view>
+</view>

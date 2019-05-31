@@ -1,0 +1,15 @@
+<!--pages/group/index.wxml-->
+<view class='container' style="padding-bottom:120rpx" >
+  <view class='yuying-group-item' wx:for="{{group_list}}" wx:for-item='item' wx:key='' bindtap='CilckToCreateTeam'
+  data-activity_id='{{item.activity_id}}'data-title='{{item.title}}' data-rlue='{{item.rlue}}' data-time='{{item.time}}' data-mdid='{{mendianId}}' data-shid='{{shanghuId}}'>
+    <image src='../../image/group_item_bg.png'></image>
+    <view class='yuying-group-item-content'>
+      <view class='yuying-group-item-title'>{{item.title}}</view>
+      <view class='ellipsis-2 yuying-group-item-rlue '>{{item.rlue}}</view>
+      <view class='yuying-group-item-time'>活动结束：{{item.time}}</view>
+    </view>
+  </view>
+  <view class='yuying-createTeam-btn'>
+      <button class='yuying-backwangka' style='background:none;color:#fff;'  bindtap='ToIndex'>返回网咖</button>
+  </view>
+</view>

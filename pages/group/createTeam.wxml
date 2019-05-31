@@ -1,0 +1,30 @@
+<!--pages/group/createTeam.wxml-->
+<view class='container yuying-createTeam' style='padding:0;height:100vh'>
+  <image src='../../image/group_page_bg.png'></image>
+  <view class='yuying-createTeam-content'>
+    <view class='clearfix yuying-team-list'>
+      <view class='pull-left  yuying-team-property'>活动类型：</view>
+      <view class='pull-left yuying-team-type'>{{title}}</view>
+    </view>
+    <view class='clearfix yuying-team-list'>
+      <view class='pull-left  yuying-team-property'>组团奖励：</view>
+      <view class='pull-left yuying-team-reward'>{{rlue}}</view>
+    </view>
+    <view class='clearfix yuying-team-list'>
+      <view class='pull-left  yuying-team-property'>活动时限：</view>
+      <view class='pull-left yuying-team-time'>{{time}}</view>
+    </view>
+    <view class='yuying-team-name-bg'>
+      <view class='clearfix yuying-team-list'>
+        <view class='pull-left  yuying-team-property'>团队名称：</view>
+        <view class='pull-left yuying-team-name'>{{teamName}}</view>
+      </view>
+      <view class='clearfix yuying-team-list'>
+        <view class='pull-left  yuying-team-property'>团队口号：</view>
+        <view class='pull-left yuying-team-slogan'>{{teamSlogan}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='yuying-createTeam-btn' > <button style='background:none;color:#fff;' open-type='share'>邀请好友</button></view>
+  <!-- <view class='yuying-createTeam-btn' bindtap='clickToInviting_friends'data-tit='测试用' >邀请好友</view> -->
+</view>
